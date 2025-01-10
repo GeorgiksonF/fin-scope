@@ -12,3 +12,11 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model news {
+  id          Int      @id @default(autoincrement())
+  title       String
+  content     String
+  source      String
+  publishedAt DateTime @default(now())
+}
